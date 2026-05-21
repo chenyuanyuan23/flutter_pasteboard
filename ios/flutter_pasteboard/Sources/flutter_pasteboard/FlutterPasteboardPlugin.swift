@@ -1,10 +1,11 @@
 import Flutter
 import UIKit
 
-public class SwiftFlutterPasteboardPlugin: NSObject, FlutterPlugin {
+@objc(FlutterPasteboardPlugin)
+public class FlutterPasteboardPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "pasteboard", binaryMessenger: registrar.messenger())
-    let instance = SwiftFlutterPasteboardPlugin()
+    let instance = FlutterPasteboardPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 
